@@ -46,8 +46,8 @@ def who_has_paid(data, month):
                 paid_names.append(payment["name"])
 
     owing_names = []
-    for name in data["members"]:
-        if name not in paid_names:
-            owing_names.append(name)
+    for member in data["members"]:
+        if member["name"] not in paid_names:
+            owing_names.append(member["name"])
 
     return paid_names, owing_names

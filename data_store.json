@@ -1,0 +1,42 @@
+{
+    "members": [
+        {
+            "name": "Gabriel Njoku",
+            "phone": "0809876",
+            "address": "enugu",
+            "date_registered": "2026-08-25"
+        },
+        {
+            "name": "Udensi Oke",
+            "phone": "090767",
+            "address": "Emene",
+            "date_registered": "2026-08-25"
+        },
+        {
+            "name": "David Hundeyin",
+            "phone": "0812345667",
+            "address": "14, City Layout, Enugu",
+            "date_registered": "2026-08-25"
+        },
+        {
+            "name": "Rita Ojiakor",
+            "phone": "091326745688",
+            "address": "25, garden avenue, GRA, Enugu",
+            "date_registered": "2026-08-25"
+        }
+    ],
+    "payments": [
+        {
+            "name": "Gabriel Njoku",
+            "amount": 5000.0,
+            "month": "August",
+            "date_recorded": "2026-08-25"
+        },
+        {
+            "name": "Rita Ojiakor",
+            "amount": 5000.0,
+            "month": "August",
+            "date_recorded": "2026-08-25"
+        }
+    ]
+}

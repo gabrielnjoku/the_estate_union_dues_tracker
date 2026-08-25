@@ -15,7 +15,7 @@ def show_menu():
 
 def import_members_from_file(data, filename="new_members.txt"):
     """
-    Bonus: read member names from a text file, one name per line.
+    Read member names from a text file, one name per line.
     Some lines might be blank or nonsense on purpose -- we skip those
     politely instead of letting the whole program crash.
     """
@@ -36,7 +36,14 @@ def import_members_from_file(data, filename="new_members.txt"):
             skipped_count += 1
             continue
 
-        was_added = members.add_member(data, name)
+        # Split the line into at most 3 parts: name, phone, and address
+        parts = line.split(",", maxsplit=2)
+
+        name = parts[0].strip()
+        phone = parts[1].strip()
+        address = parts[2].strip()
+
+        was_added = members.add_member(data, name, phone, address)
         if was_added:
             added_count += 1
 
@@ -52,7 +59,9 @@ def main():
 
         if choice == "1":
             name = input("Enter the new member's name: ")
-            members.add_member(data, name)
+            phone = input("Enter phone number: ")
+            address = input("Enter the new member's address: ")
+            members.add_member(data, name, phone, address)
             storage.save_data(data)
 
         elif choice == "2":
@@ -96,9 +105,9 @@ def main():
             history = payments.get_member_history(data, name)
 
             if not history:
-                print(f"No payments found for {name}.")
+                print(f"No payments found for {name.title()}.")
             else:
-                print(f"\n--- Payment history for {name} ---")
+                print(f"\n--- Payment history for {name.title()} ---")
                 for record in history:
                     print(f"  {record['month']}: {record['amount']} (recorded {record['date_recorded']})")
 
